@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="skip_onboarding">Skip Onboarding</string>
+    <string name="next">Next</string>
+    <string name="confidence_in_your_words">Confidence in your words</string>
+    <string name="with_conversation_based_learning_nyou_ll_be_talking_from_lesson_one">With conversation-based learning,\nyou\'ll be talking from lesson one</string>
+    <string name="develop_a_habit_of_learning_and_nmake_it_a_part_of_your_daily_routine">Develop a habit of learning and\nmake it a part of your daily routine</string>
+    <string name="more">More</string>
+    <string name="take_your_time_to_learn">Take your time to learn</string>
+    <string name="the_lessons_you_need_to_learn">The lessons you need to learn</string>
+    <string name="choose_a_language">Choose a language</string>
+    <string name="using_a_variety_of_learning_styles_to_learn_nand_retain">Using a variety of learning styles to learn\nand retain</string>
+    <string name="what_is_your_mother_language">What is your Mother language?</string>
+    <string name="language_select">Language select</string>
+    <string name="english">English</string>
+    <string name="russian">Russian</string>
+    <string name="chinese">Chinese</string>
+    <string name="belarus">Belarus</string>
+    <string name="kazakh">Kazakh</string>
+    <string name="choose">Choose</string>
+</resources>

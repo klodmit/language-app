@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/animalExcercizeFragment"
+        android:name="ru.languageapp.ui.gamescreen.AnimalExcercizeFragment"
+        android:label="fragment_animal_excercize"
+        tools:layout="@layout/fragment_animal_excercize" />
+    <fragment
+        android:id="@+id/animalExercizeFailFragment"
+        android:name="ru.languageapp.AnimalExercizeFailFragment"
+        android:label="fragment_animal_exercize_fail"
+        tools:layout="@layout/fragment_animal_exercize_fail" />
+    <fragment
+        android:id="@+id/animalExercizeSuccessFragment"
+        android:name="ru.languageapp.AnimalExercizeSuccessFragment"
+        android:label="fragment_animal_exercize_success"
+        tools:layout="@layout/fragment_animal_exercize_success" />
+    <fragment
+        android:id="@+id/exercizeListeningFragment"
+        android:name="ru.languageapp.ui.gamescreen.ExercizeListeningFragment"
+        android:label="fragment_exercize_listening"
+        tools:layout="@layout/fragment_exercize_listening" />
+    <fragment
+        android:id="@+id/exercizeListeningErrorFragment"
+        android:name="ru.languageapp.ExercizeListeningErrorFragment"
+        android:label="fragment_exercize_listening_error"
+        tools:layout="@layout/fragment_exercize_listening_error" />
+    <fragment
+        android:id="@+id/exercizeListeningListenFragment"
+        android:name="ru.languageapp.ExercizeListeningListenFragment"
+        android:label="fragment_exercize_listening_listen"
+        tools:layout="@layout/fragment_exercize_listening_listen" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.languageapp.ui.gamescreen.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/wordPracticeFragment"
+        android:name="ru.languageapp.ui.gamescreen.WordPracticeFragment"
+        android:label="fragment_word_practice"
+        tools:layout="@layout/fragment_word_practice" />
+    <fragment
+        android:id="@+id/wordPracticeErrorFragment"
+        android:name="ru.languageapp.WordPracticeErrorFragment"
+        android:label="fragment_word_practice_error"
+        tools:layout="@layout/fragment_word_practice_error" />
+    <fragment
+        android:id="@+id/wordPracticeSuccesFragment"
+        android:name="ru.languageapp.WordPracticeSuccesFragment"
+        android:label="fragment_word_practice_succes"
+        tools:layout="@layout/fragment_word_practice_succes" />
+    <fragment
+        android:id="@+id/chooseLanguageFragment2"
+        android:name="ru.languageapp.ui.onboarding.ChooseLanguageFragment"
+        android:label="fragment_choose_language"
+        tools:layout="@layout/fragment_choose_language" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ru.languageapp.ui.gamescreen.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+</navigation>

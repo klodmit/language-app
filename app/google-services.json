@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "446877362840",
+    "project_id": "languageapp-f75e6",
+    "storage_bucket": "languageapp-f75e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446877362840:android:6c6d1687547bab5864beed",
+        "android_client_info": {
+          "package_name": "ru.languageapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIXfGOMlNMjJpNnOpHAAf_kzv_PM5C8Lw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
