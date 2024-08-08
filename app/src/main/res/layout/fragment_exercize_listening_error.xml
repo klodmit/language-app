@@ -28,11 +28,11 @@
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.095"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/back"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/last_name"
         android:layout_width="327dp"
         android:layout_height="56dp"
         android:layout_marginBottom="296dp"
@@ -104,7 +104,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/fredoka_one"
         android:text="Your result"
-        app:layout_constraintBottom_toTopOf="@+id/text1"
+        app:layout_constraintBottom_toTopOf="@+id/last_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent" />
@@ -119,6 +119,6 @@
         android:textSize="100sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text1" />
+        app:layout_constraintTop_toBottomOf="@+id/last_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,7 +26,7 @@
         tools:ignore="DuplicateIds" />
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/last_name"
         android:layout_width="327dp"
         android:layout_height="56dp"
         android:layout_marginTop="108dp"
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -101,7 +101,7 @@
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/back"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

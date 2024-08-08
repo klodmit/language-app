@@ -1,83 +1,74 @@
 package ru.languageapp.ui.loginscreen
 
+import ru.languageapp.logic.AuthViewModel
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import ru.languageapp.R
+import ru.languageapp.RetrofitClient
 import ru.languageapp.ui.gamescreen.MainActivity
 
-import ru.languageapp.data.AuthRequest
-import ru.languageapp.data.User
 import ru.languageapp.databinding.FragmentLoginBinding
+import ru.languageapp.logic.ViewModelFactory
 import ru.languageapp.logic.api.MainApi
 
 
 class LoginFragment : Fragment() {
-    private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentLoginBinding
+    private val mainApi = RetrofitClient.retrofit.create(MainApi::class.java)
+    private val authViewModel: AuthViewModel by viewModels { ViewModelFactory(AuthViewModel::class.java, mainApi) }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
-    private fun loginAccepted(user: User?): Boolean {
-        return user != null // Успешная авторизация, если пользователь не null
-    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.level = HttpLoggingInterceptor.Level.BODY
-        val client = OkHttpClient.Builder()
-            .addInterceptor(interceptor)
-            .build()
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://languageapp-klodmit.amvera.io/").client(client)
-            .addConverterFactory(GsonConverterFactory.create()).build()
-
-        val mainApi = retrofit.create(MainApi::class.java)
+        binding = FragmentLoginBinding.bind(view)
 
         binding.login.setOnClickListener {
-            CoroutineScope(Dispatchers.Main).launch {
-                try {
-                    val authRequest = AuthRequest(
-                        login = binding.insertaddress.text.toString(),
-                        password = binding.insertpass.text.toString()
-                    )
-
-                    val loggedInUser = withContext(Dispatchers.IO) {
-                        mainApi.loginUser(authRequest)
-                    }
-
-                    if (loginAccepted(loggedInUser)) {
-                        val intent = Intent(requireActivity(), MainActivity::class.java)
-                        requireActivity().startActivity(intent)
-                    } else {
-                        // Обработка неудачной авторизации
-                        println("Ошибка авторизации: неправильный логин или пароль")
-                    }
-                } catch (e: Exception) {
-                    // Обработка ошибки авторизации
-                    println("Ошибка авторизации: ${e.message}")
+            val login = binding.insertLogin.text.toString()
+            val password = binding.insertpass.text.toString()
+            authViewModel.loginUser(login, password)
+        }
+        authViewModel.loginResult.observe(viewLifecycleOwner, Observer { result ->
+            result.onSuccess { success ->
+                if (success) {
+                    val intent = Intent(requireActivity(), MainActivity::class.java)
+                    requireActivity().startActivity(intent)
+                } else {
+                    // Обработка неудачной авторизации
+                    println("Ошибка авторизации: неправильный логин или пароль")
                 }
+            }.onFailure { exception ->
+                // Обработка ошибки авторизации
+                println("Ошибка авторизации: ${exception.message}")
             }
+        })
+        binding.signup.setOnClickListener{
+            view.postDelayed({
+                findNavController().navigate(R.id.action_LoginFragment_to_SignUpFragment)
+            },100)
+        }
+        binding.back.setOnClickListener{
+            view.postDelayed({
+                activity?.onBackPressedDispatcher?.onBackPressed()
+            },100)
         }
     }
 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.loginscreen.SignUpFragmentSecond" >
 
-    <TextView
+    <EditText
         android:id="@+id/insertpass"
         android:layout_width="327dp"
         android:layout_height="56dp"
@@ -18,7 +18,7 @@
         android:hint="Enter Password"
         android:padding="16dp"
         android:textAlignment="textStart"
-        android:textColor="@color/red"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -88,7 +88,7 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.551" />
 
-    <TextView
+    <EditText
         android:id="@+id/confirm_pass"
         android:layout_width="327dp"
         android:layout_height="56dp"
@@ -100,7 +100,7 @@
         android:hint="Repeat Password"
         android:padding="16dp"
         android:textAlignment="textStart"
-        android:textColor="@color/red"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +110,7 @@
         android:id="@+id/confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/fredoka_one"
         android:text="Confirm Password"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,28 +127,30 @@
         android:text="Already you member?"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text1" />
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="@+id/register_button"
+        app:layout_constraintTop_toBottomOf="@+id/register_button" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:clickable="true"
         android:fontFamily="@font/fredoka_one"
+        android:foreground="?attr/selectableItemBackground"
         android:text="Login"
         android:textColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toEndOf="@+id/textView1"
-        app:layout_constraintTop_toBottomOf="@+id/text1" />
+        app:layout_constraintTop_toBottomOf="@+id/register_button" />
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/register_button"
         android:layout_width="327dp"
         android:layout_height="56dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="108dp"
         android:background="@drawable/style_button"
         android:clickable="true"
         android:fontFamily="@font/fredoka_one"

@@ -88,7 +88,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/back"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="108dp"

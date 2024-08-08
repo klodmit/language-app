@@ -5,56 +5,57 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import ru.languageapp.R
+import ru.languageapp.RetrofitClient
+import ru.languageapp.databinding.FragmentSignUp2Binding
+import ru.languageapp.logic.RegisterViewModel
+import ru.languageapp.logic.ViewModelFactory
+import ru.languageapp.logic.api.MainApi
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SignUpFragmentSecond.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SignUpFragmentSecond : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentSignUp2Binding
+    private val mainApi = RetrofitClient.retrofit.create(MainApi::class.java)
+    private val registerViewModel: RegisterViewModel by activityViewModels { ViewModelFactory(RegisterViewModel::class.java, mainApi) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up2, container, false)
+        binding = FragmentSignUp2Binding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SingUpFragment2.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SignUpFragmentSecond().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentSignUp2Binding.bind(view)
+
+        binding.registerButton.setOnClickListener {
+            val password = binding.insertpass.text.toString()
+            val confirmPassword = binding.confirmPass.text.toString()
+
+            if (password == confirmPassword) {
+                registerViewModel.registerUser(password)
+            } else {
+                // Вывести сообщение об ошибке (пароли не совпадают)
             }
+        }
+
+        // Наблюдаем за результатами регистрации
+        registerViewModel.registerResult.observe(viewLifecycleOwner) { result ->
+            result.fold(
+                onSuccess = { token ->
+                    Toast.makeText(context, "Success", LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_SignUpFragmentSecond_to_LoginFragment)
+                },
+                onFailure = { error ->
+                    // Обработка ошибки регистрации
+                }
+            )
+        }
     }
 }

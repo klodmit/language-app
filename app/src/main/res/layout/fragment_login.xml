@@ -10,29 +10,26 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/fredoka_one"
         android:text="Use can use "
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text1"
-        app:layout_constraintVertical_bias="0.909" />
+        app:layout_constraintStart_toStartOf="@+id/login"
+        app:layout_constraintTop_toBottomOf="@+id/new_member" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
+        android:layout_width="74dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="20dp"
         android:clickable="true"
         android:fontFamily="@font/fredoka_one"
+        android:foreground="?attr/selectableItemBackground"
         android:text="Google for"
         android:textColor="@color/blue"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/text1"
-        app:layout_constraintVertical_bias="0.909" />
+        app:layout_constraintTop_toBottomOf="@+id/new_member" />
 
     <TextView
         android:id="@+id/textView12"
@@ -50,8 +47,7 @@
         android:id="@+id/login"
         android:layout_width="327dp"
         android:layout_height="56dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/style_button"
         android:clickable="true"
         android:fontFamily="@font/fredoka_one"
@@ -61,6 +57,7 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgotpass" />
 
@@ -80,13 +77,13 @@
         android:id="@+id/pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/fredoka_one"
         android:text="Password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/insertaddress" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/insertpass"
+        app:layout_constraintTop_toBottomOf="@+id/insert_login" />
 
     <EditText
         android:id="@+id/insertpass"
@@ -100,8 +97,10 @@
         android:foreground="?attr/selectableItemBackground"
         android:hint="*******"
         android:padding="16dp"
+        android:password="true"
+        android:inputType="textPassword"
         android:textAlignment="textStart"
-        android:textColor="@color/red"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
@@ -110,20 +109,21 @@
 
     <TextView
         android:id="@+id/forgotpass"
-        android:layout_width="wrap_content"
+        android:layout_width="117dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:clickable="true"
         android:fontFamily="@font/fredoka_one"
+        android:foreground="?attr/selectableItemBackground"
         android:text="Forgot Password "
         android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/insertpass"
         app:layout_constraintTop_toBottomOf="@+id/insertpass" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -134,18 +134,18 @@
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/address"
+        android:id="@+id/your_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/fredoka_one"
-        android:text="Email Address"
+        android:text="Your Login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/insert_login"
         app:layout_constraintTop_toBottomOf="@+id/text" />
 
     <TextView
@@ -162,7 +162,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/new_member"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -170,27 +170,28 @@
         android:text="Not you member?"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintStart_toStartOf="@+id/login"
         app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <TextView
-        android:id="@+id/text2"
+        android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:fontFamily="@font/fredoka_one"
+        android:foreground="?attr/selectableItemBackground"
         android:text="SignUp"
         android:textColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/text1"
+        app:layout_constraintStart_toEndOf="@+id/new_member"
         app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <EditText
-        android:id="@+id/insertaddress"
+        android:id="@+id/insert_login"
         android:layout_width="327dp"
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
@@ -199,14 +200,14 @@
         android:editable="true"
         android:fontFamily="@font/fredoka_one"
         android:foreground="?attr/selectableItemBackground"
-        android:hint="Email address"
+        android:hint="test"
         android:padding="16dp"
         android:textAlignment="textStart"
-        android:textColor="@color/red"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address" />
+        app:layout_constraintTop_toBottomOf="@+id/your_login" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -228,7 +229,7 @@
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/back"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.551" />
 

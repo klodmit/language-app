@@ -12,9 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:clickable="true"
         android:fontFamily="@font/fredoka_one"
+        android:foreground="?attr/selectableItemBackground"
         android:text="Login"
         android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/continue_button"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/member"
         app:layout_constraintTop_toBottomOf="@+id/continue_button" />
 
@@ -22,19 +27,19 @@
         android:id="@+id/member"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/fredoka_one"
         android:text="Already you member?"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/continue_button"
         app:layout_constraintTop_toBottomOf="@+id/continue_button" />
 
-    <TextView
-        android:id="@+id/text1"
+    <EditText
+        android:id="@+id/last_name"
         android:layout_width="327dp"
         android:layout_height="56dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/style_word_button"
         android:clickable="true"
         android:fontFamily="@font/fredoka_one"
@@ -42,10 +47,10 @@
         android:hint="Your Last Name"
         android:padding="16dp"
         android:textAlignment="textStart"
-        android:textColor="@color/red"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lastname" />
 
@@ -53,18 +58,51 @@
         android:id="@+id/lastname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/fredoka_one"
         android:text="Last Name"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/insert_name"
         app:layout_constraintTop_toBottomOf="@+id/insert_name" />
 
+    <EditText
+        android:id="@+id/insert_login"
+        android:layout_width="327dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/style_word_button"
+        android:clickable="true"
+        android:fontFamily="@font/fredoka_one"
+        android:foreground="?attr/selectableItemBackground"
+        android:hint="Your uniq login"
+        android:padding="16dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        tools:ignore="DuplicateIds" />
+
     <TextView
+        android:id="@+id/firstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/fredoka_one"
+        android:text="First Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/insert_login"
+        app:layout_constraintTop_toBottomOf="@+id/insert_login" />
+
+    <EditText
         android:id="@+id/insert_name"
         android:layout_width="327dp"
         android:layout_height="56dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/style_word_button"
         android:clickable="true"
         android:fontFamily="@font/fredoka_one"
@@ -72,28 +110,30 @@
         android:hint="Your Name"
         android:padding="16dp"
         android:textAlignment="textStart"
-        android:textColor="@color/red"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/insert_last_name" />
+        app:layout_constraintTop_toBottomOf="@+id/firstname" />
 
     <TextView
-        android:id="@+id/insert_last_name"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/fredoka_one"
-        android:text="First Name"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/insert_login"
         app:layout_constraintTop_toBottomOf="@+id/create" />
 
-    <TextView
-        android:id="@+id/insertaddress"
+    <EditText
+        android:id="@+id/insert_address"
         android:layout_width="327dp"
         android:layout_height="56dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/style_word_button"
         android:clickable="true"
         android:fontFamily="@font/fredoka_one"
@@ -101,10 +141,10 @@
         android:hint="example@gmail.com"
         android:padding="16dp"
         android:textAlignment="textStart"
-        android:textColor="@color/red"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
@@ -112,12 +152,11 @@
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/fredoka_one"
         android:text="Email Address"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text1" />
+        app:layout_constraintStart_toStartOf="@+id/last_name"
+        app:layout_constraintTop_toBottomOf="@+id/last_name" />
 
     <TextView
         android:id="@+id/create"
@@ -146,9 +185,9 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/insertaddress" />
+        app:layout_constraintTop_toBottomOf="@+id/insert_address" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -165,7 +204,6 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/fredoka_one"
@@ -173,17 +211,20 @@
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.413" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/arrow"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

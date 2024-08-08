@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import ru.languageapp.R
 import ru.languageapp.databinding.FragmentFirstBinding
+import androidx.activity.OnBackPressedCallback
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -43,6 +44,10 @@ private var _binding: FragmentFirstBinding? = null
                 findNavController().navigate(R.id.action_FirstFragment_to_ChooseLanguage)
             },100)
         }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+            }
+        })
     }
 
 override fun onDestroyView() {

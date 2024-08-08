@@ -1,6 +1,7 @@
 package ru.languageapp.data
 
 data class User(
-    val username: String,
-    val firstName: String
+    val login: String,
+    val password: String,
+    val token: String
 )
