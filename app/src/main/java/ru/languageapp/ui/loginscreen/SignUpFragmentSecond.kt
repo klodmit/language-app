@@ -53,7 +53,7 @@ class SignUpFragmentSecond : Fragment() {
                     findNavController().navigate(R.id.action_SignUpFragmentSecond_to_LoginFragment)
                 },
                 onFailure = { error ->
-                //здесь обработка ошибки
+                //здесь обработка
                 }
             )
         }
