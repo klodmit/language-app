@@ -44,7 +44,7 @@ class LoginFragment : Fragment() {
         binding.login.setOnClickListener {
             val login = binding.insertLogin.text.toString()
             val password = binding.insertpass.text.toString()
-            authViewModel.loginUser(login, password)
+            authViewModel.loginUser(login, password, requireContext())
         }
         authViewModel.loginResult.observe(viewLifecycleOwner, Observer { result ->
             result.onSuccess { success ->

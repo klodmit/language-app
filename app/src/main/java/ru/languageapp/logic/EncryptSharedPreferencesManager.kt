@@ -23,21 +23,21 @@ class EncryptSharedPreferencesManager(context: Context) {
     private val keyToken = "token"
 
     var login
-        get() = encryptedSharedPreferences.getString(keyLogin,"").toString()
+        get() = encryptedSharedPreferences.getString(keyLogin,"siifupsiusgdf").toString()
         set(value){
             encryptedEditor.putString(keyLogin,value)
             encryptedEditor.commit()
         }
 
     var password
-        get() = encryptedSharedPreferences.getString(keyPassword,"").toString()
+        get() = encryptedSharedPreferences.getString(keyPassword,"sfdgsvbds").toString()
         set(value){
             encryptedEditor.putString(keyPassword,value)
             encryptedEditor.commit()
         }
 
     var token
-        get() = encryptedSharedPreferences.getString(keyToken,"").toString()
+        get() = encryptedSharedPreferences.getString(keyToken,"sfgdsdvfsd").toString()
         set(value){
             encryptedEditor.putString(keyToken,value)
             encryptedEditor.commit()
