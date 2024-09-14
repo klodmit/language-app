@@ -18,6 +18,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ru.languageapp.data.TokenRequest
+import ru.languageapp.data.UserInfoRequest
 import ru.languageapp.databinding.FragmentSplashBinding
 import ru.languageapp.logic.EncryptSharedPreferencesManager
 import ru.languageapp.logic.api.MainApi
@@ -66,6 +67,15 @@ class SplashFragment : Fragment() {
                         Log.d("FF", "Ответ от API: $response")
                         // Токен валиден, продолжаем
                         Log.d("FF","Токен валиден")
+                        val result = mainApi.getUserInfo(UserInfoRequest(response.login))
+                        Log.d("FF", "Ответ от API: $result")
+
+                        encryptManager.userLogin = result.login
+                        encryptManager.userFirstName = result.firstname
+                        encryptManager.userLastName = result.lastname
+                        encryptManager.userEmail = result.email
+                        encryptManager.userPoints = result.points
+
                         navigateToMainScreen()
                     } else {
                         // Токен не валиден, перенаправляем на авторизацию
@@ -83,8 +93,9 @@ class SplashFragment : Fragment() {
     private fun navigateToMainScreen() {
         // Запускаем MainActivity и завершаем SplashActivity
         val intent = Intent(requireActivity(), MainActivity::class.java)
+        Handler().postDelayed({
         startActivity(intent)
-        requireActivity().finish() // Закрываем текущую активность (Splash)
+        requireActivity().finish()},2000) // Закрываем текущую активность (Splash)
     }
 
     private fun navigateToFirstFragment() {

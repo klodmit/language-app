@@ -43,8 +43,11 @@
     <fragment
         android:id="@+id/wordPracticeFragment"
         android:name="ru.languageapp.ui.gamescreen.WordPracticeFragment"
-        android:label="fragment_word_practice"
-        tools:layout="@layout/fragment_word_practice" />
+        tools:layout="@layout/fragment_word_practice" >
+        <action
+            android:id="@+id/action_wordPracticeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/wordPracticeErrorFragment"
         android:name="ru.languageapp.WordPracticeErrorFragment"
@@ -64,5 +67,9 @@
         android:id="@+id/mainFragment"
         android:name="ru.languageapp.ui.gamescreen.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_wordPracticeFragment"
+            app:destination="@id/wordPracticeFragment" />
+    </fragment>
 </navigation>

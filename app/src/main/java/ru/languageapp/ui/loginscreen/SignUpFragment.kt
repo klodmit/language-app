@@ -37,7 +37,7 @@ class SignUpFragment : Fragment() {
             val lastName = binding.lastName.text.toString()
             val email = binding.insertAddress.text.toString()
 
-            if(registerViewModel.setUserInfo(login, firstName, lastName, email) != null){
+            if(registerViewModel.setUserInfo(login, firstName, lastName, email, requireContext()) != null){
                 findNavController().navigate(R.id.action_SignUpFragment_to_SignUpSecondFragment)
             }
 

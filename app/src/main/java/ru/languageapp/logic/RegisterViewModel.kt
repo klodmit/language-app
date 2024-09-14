@@ -1,5 +1,6 @@
 package ru.languageapp.logic
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -23,11 +24,17 @@ class RegisterViewModel(private val mainApi: MainApi) : ViewModel() {
     private var lastName: String? = null
     private var email: String? = null
 
-    fun setUserInfo(login: String, firstName: String, lastName: String, email: String) {
+    fun setUserInfo(login: String, firstName: String, lastName: String, email: String, context: Context) {
         this.login = login
         this.firstName = firstName
         this.lastName = lastName
         this.email = email
+        val encryptManager = EncryptSharedPreferencesManager(context)
+        encryptManager.userLogin = login
+        encryptManager.userFirstName = firstName
+        encryptManager.userLastName = lastName
+        encryptManager.userEmail = email
+        encryptManager.userPoints = 0
     }
 
     fun registerUser(password: String) {

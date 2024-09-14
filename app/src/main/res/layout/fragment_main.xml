@@ -6,6 +6,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.gamescreen.MainFragment">
 
+    <TextView
+        android:id="@+id/nameEx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/fredoka_one"
+        android:text="Word Practice"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/word_practice" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -19,120 +32,137 @@
 
     <TextView
         android:id="@+id/user1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/style_word_button"
         android:fontFamily="@font/fredoka_one"
         android:padding="16dp"
         android:paddingStart="120dp"
         android:paddingEnd="120dp"
         android:text="Vincent van Gogh"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="34dp"
+        android:src="@drawable/men"
+        app:layout_constraintBottom_toBottomOf="@+id/user1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="@+id/user1"
+        app:layout_constraintVertical_bias="0.166" />
 
     <TextView
         android:id="@+id/user2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/style_word_button"
         android:fontFamily="@font/fredoka_one"
         android:padding="16dp"
         android:paddingStart="120dp"
         android:paddingEnd="120dp"
         android:text="Vincent van Gogh"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/user1" />
 
     <TextView
         android:id="@+id/user3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/style_word_button"
         android:fontFamily="@font/fredoka_one"
         android:padding="16dp"
         android:paddingStart="120dp"
         android:paddingEnd="120dp"
         android:text="Vincent van Gogh"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/user2" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="164dp"
+        android:src="@drawable/men"
+        app:layout_constraintBottom_toBottomOf="@+id/user3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="@+id/user3" />
 
     <ImageView
         android:id="@+id/back"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/men"
+        app:layout_constraintBottom_toBottomOf="@+id/user2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="@+id/user2" />
 
     <TextView
-        android:id="@+id/textView141"
+        android:id="@+id/user1_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/fredoka_one"
-        android:text="12 pooints"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        android:text="12 points"
+        app:layout_constraintBottom_toBottomOf="@+id/user1"
+        app:layout_constraintEnd_toEndOf="@+id/user1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/user1"
+        app:layout_constraintTop_toTopOf="@+id/user1" />
 
     <TextView
-        android:id="@+id/textView142"
+        android:id="@+id/user2_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/fredoka_one"
-        android:text="12 pooints"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        android:text="12 points"
+        app:layout_constraintBottom_toBottomOf="@+id/user2"
+        app:layout_constraintEnd_toEndOf="@+id/user2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/user2"
+        app:layout_constraintTop_toTopOf="@+id/user2" />
 
     <TextView
-        android:id="@+id/textView143"
+        android:id="@+id/user3_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/fredoka_one"
-        android:text="12 pooints"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        android:text="12 points"
+        app:layout_constraintBottom_toBottomOf="@+id/user3"
+        app:layout_constraintEnd_toEndOf="@+id/user3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/user3"
+        app:layout_constraintTop_toTopOf="@+id/user3" />
 
     <TextView
         android:id="@+id/textView3"
@@ -161,72 +191,24 @@
         app:layout_constraintTop_toBottomOf="@+id/user3" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/word_practice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="168dp"
         android:background="@drawable/style_button"
-        android:paddingStart="8dp"
-        android:paddingLeft="8dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="10dp"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:paddingStart="6dp"
+        android:paddingLeft="6dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="8dp"
         android:text="🐻‍❄️"
         android:textSize="90sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="168dp"
-        android:background="@drawable/style_button"
-        android:paddingStart="8dp"
-        android:paddingLeft="8dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="10dp"
-        android:text="🐻‍❄️"
-        android:textSize="90sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.752"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/style_button"
-        android:paddingStart="8dp"
-        android:paddingLeft="8dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="10dp"
-        android:text="🐻‍❄️"
-        android:textSize="90sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/style_button"
-        android:paddingStart="8dp"
-        android:paddingLeft="8dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="10dp"
-        android:text="🐻‍❄️"
-        android:textSize="90sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.752"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.348" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -237,7 +219,7 @@
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars[0]" />
+        android:src="@drawable/women" />
 
     <TextView
         android:id="@+id/textView61"
@@ -246,7 +228,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/fredoka_one"
-        android:text="Hello, Emil"
+        android:text="@string/hello_login"
         android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
@@ -263,7 +245,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/fredoka_one"
-        android:text="Are you ready for learning today?"
+        android:text="@string/are_you_ready_for_learning_today"
         android:textColor="@color/white"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
