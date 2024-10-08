@@ -9,6 +9,8 @@ import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import okhttp3.OkHttp
+import org.json.JSONObject
 import ru.languageapp.R
 import ru.languageapp.RetrofitClient
 import ru.languageapp.databinding.FragmentSignUp2Binding
@@ -41,7 +43,7 @@ class SignUpFragmentSecond : Fragment() {
             if (password == confirmPassword) {
                 registerViewModel.registerUser(password)
             } else {
-                // Вывести сообщение об ошибке (пароли не совпадают)
+                Toast.makeText(context, "Пароли не совпадают", LENGTH_SHORT).show()
             }
         }
 
@@ -53,7 +55,8 @@ class SignUpFragmentSecond : Fragment() {
                     findNavController().navigate(R.id.action_SignUpFragmentSecond_to_LoginFragment)
                 },
                 onFailure = { error ->
-                //здесь обработка
+                    if(error.message?.contains("400") == true){
+                    }
                 }
             )
         }

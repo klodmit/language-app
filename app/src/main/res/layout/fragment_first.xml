@@ -13,11 +13,12 @@
         android:layout_marginTop="24dp"
         android:clickable="true"
         android:fontFamily="@font/fredoka_one"
+        android:foreground="?attr/selectableItemBackground"
         android:text="@string/skip_onboarding"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        android:foreground="?attr/selectableItemBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/next_button" />
 
@@ -57,6 +58,7 @@
         android:layout_marginTop="56dp"
         android:fontFamily="@font/fredoka_one"
         android:text="@string/confidence_in_your_words"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

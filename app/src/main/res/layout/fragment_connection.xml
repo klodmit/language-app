@@ -43,6 +43,7 @@
         android:fontFamily="@font/fredoka_one"
         android:text="No\ninternet connection"
         android:textAlignment="center"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
