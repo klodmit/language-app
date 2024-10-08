@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import okhttp3.OkHttp
 import org.json.JSONObject
+import retrofit2.HttpException
 import ru.languageapp.R
 import ru.languageapp.RetrofitClient
 import ru.languageapp.databinding.FragmentSignUp2Binding
@@ -47,7 +48,7 @@ class SignUpFragmentSecond : Fragment() {
             }
         }
 
-        // Наблюдаем за результатами регистрации
+        // проверка регистрации
         registerViewModel.registerResult.observe(viewLifecycleOwner) { result ->
             result.fold(
                 onSuccess = { token ->
@@ -55,7 +56,14 @@ class SignUpFragmentSecond : Fragment() {
                     findNavController().navigate(R.id.action_SignUpFragmentSecond_to_LoginFragment)
                 },
                 onFailure = { error ->
-                    if(error.message?.contains("400") == true){
+                    if (error is HttpException && error.code() == 400) {
+                        // Получаем тело ошибки из ответа сервера
+                        val errorBody = error.response()?.errorBody()?.string() ?: "Unknown error"
+                        Toast.makeText(context, errorBody, LENGTH_SHORT).show()
+                    } else {
+                        // Общая обработка других ошибок
+                        val errorMessage = error.message ?: "Unknown error"
+                        Toast.makeText(context, errorMessage, LENGTH_SHORT).show()
                     }
                 }
             )
